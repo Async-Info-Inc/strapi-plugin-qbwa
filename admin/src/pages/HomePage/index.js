@@ -1,11 +1,14 @@
-import { Editor } from "@monaco-editor/react";
 import React, { memo } from "react";
+import Header from "../../qbwa/components/header";
+import Body from "../../qbwa/components/body";
+import Footer from "../../qbwa/components/footer";
 
 const HomePage = () => {
-    return <>
-        <h1>QBWA - This is going to be a slog to edit</h1>
-        <Editor height="90vh" defaultLanguage="javascript" defaultValue="// some comment" />;
-    </>;
+    return <div>
+        <Header />
+        <Body />
+        <Footer />
+    </div>>;
 };
 
 export default memo(HomePage);
