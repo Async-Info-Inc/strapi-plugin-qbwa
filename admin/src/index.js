@@ -5,6 +5,7 @@ import Initializer from "./components/Initializer";
 import Wysiwyg from "./components/Wysiwyg";
 import { getTrad } from "./utils";
 import pluginPermissions from "./permissions";
+import PluginIcon from './components/PluginIcon';
 
 const name = pluginPkg.strapi.name;
 
