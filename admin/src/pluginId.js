@@ -1,5 +1,3 @@
-const pluginPkg = require("../../package.json");
-
-const pluginId = pluginPkg.name.replace(/^(@sklinet\/strapi-)plugin-/i, "");
+const pluginId = "qbwa";
 
 module.exports = pluginId;
