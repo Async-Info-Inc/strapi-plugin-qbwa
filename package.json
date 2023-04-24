@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.5.0",
-    "@tinymce/tinymce-react": "4.3.0"
+    "@tinymce/tinymce-react": "4.3.0",
+    "fs": "^0.0.1-security"
   },
   "peerDependencies": {
     "@strapi/strapi": "^4.0.0"
