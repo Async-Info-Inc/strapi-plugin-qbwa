@@ -1,4 +1,5 @@
-import fs from 'fs';
+const fs = require("fs");
+
 export const setUpPublic = () => {
     const publicFolder = "/";
     const qbwaPublic = `${publicFolder}/qbwa`;
