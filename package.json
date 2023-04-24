@@ -18,6 +18,7 @@
     "kind": "plugin"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.5.0",
     "@tinymce/tinymce-react": "4.3.0"
   },
   "peerDependencies": {
