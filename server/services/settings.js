@@ -4,7 +4,7 @@ function getPluginStore() {
     return strapi.store({
         environment: "",
         type: "plugin",
-        name: "tinymce",
+        name: "qbwa",
     });
 }
 async function createDefaultConfig() {

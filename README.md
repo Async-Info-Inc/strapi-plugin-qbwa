@@ -26,16 +26,16 @@ Inside your Strapi app, add the package:
 
 With `npm`:
 ```bash
-npm install @sklinet/strapi-plugin-tinymce
+npm install @asyncinfo/strapi-plugin-qbwa
 ```
 With `yarn`:
 ```bash
-yarn add @sklinet/strapi-plugin-tinymce
+yarn add @asyncinfo/strapi-plugin-qbwa
 ```
 
 In `config/plugins.js` file add:
 ```js
-tinymce:{
+qbwa:{
     enabled:true
 };
 ```
@@ -43,7 +43,7 @@ tinymce:{
 If you do not yet have this file, then create and add:
 ```js
 module.exports = () => ({
-    tinymce:{
+    qbwa:{
       enabled:true
     };
 })
@@ -115,7 +115,7 @@ Learn more about configuration from [official documentation](https://www.tiny.cl
 ```js
 // plugins.js
 module.exports = ({ env }) => ({
-    tinymce: {
+    qbwa: {
         enabled: true,
         config: {
             editor: {

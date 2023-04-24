@@ -6,13 +6,13 @@ module.exports = async ({ strapi }) => {
             section: "plugins",
             displayName: "Access the plugin settings",
             uid: "settings.read",
-            pluginName: "tinymce",
+            pluginName: "qbwa",
         },
         {
             section: "plugins",
             displayName: "Menu link to plugin settings",
             uid: "menu-link",
-            pluginName: "tinymce",
+            pluginName: "qbwa",
         },
     ];
     await strapi.admin.services.permission.actionProvider.registerMany(actions);
