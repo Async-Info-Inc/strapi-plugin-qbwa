@@ -8,7 +8,7 @@ const HomePage = () => {
         <Header />
         <Body />
         <Footer />
-    </div>>
+    </div>
 };
 
 export default memo(HomePage);
