@@ -1,7 +1,7 @@
 {
-  "name": "@sklinet/strapi-plugin-tinymce",
-  "version": "1.0.6",
-  "description": "Replaces the default Strapi WYSIWYG editor with a customized build of TinyMCE editor.",
+  "name": "@asyncinfo/strapi-plugin-qbwa",
+  "version": "0.0.1",
+  "description": "QBWA - Quickly Build Web Apps by Async Info Inc.",
   "private": false,
   "keywords": [
     "strapi",
@@ -12,30 +12,30 @@
     "editor"
   ],
   "strapi": {
-    "displayName": "TinyMCE",
-    "name": "tinymce",
-    "description": "Replaces the default Strapi WYSIWYG editor with a customized build of TinyMCE editor.",
+    "displayName": "QBWA",
+    "name": "qbwa",
+    "description": "QBWA - Quickly Build Web Apps by Async Info Inc.",
     "kind": "plugin"
   },
   "dependencies": {
-    "@tinymce/tinymce-react": "4.2.0"
+    "@tinymce/tinymce-react": "4.3.0"
   },
   "peerDependencies": {
     "@strapi/strapi": "^4.0.0"
   },
   "author": {
-    "name": "SKLINET s.r.o.",
-    "url": "https://github.com/SKLINET"
+    "name": "Async Info Inc.",
+    "url": "https://github.com/orgs/Async-Info-Inc"
   },
   "maintainers": [
     {
-      "name": "SKLINET s.r.o.",
-      "url": "https://github.com/SKLINET"
+      "name": "Async Info Inc.",
+      "url": "https://github.com/admin-asyncinfo"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SKLINET/strapi-plugin-tinymce"
+    "url": "https://github.com/Async-Info-Inc/strapi-plugin-qbwa"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
