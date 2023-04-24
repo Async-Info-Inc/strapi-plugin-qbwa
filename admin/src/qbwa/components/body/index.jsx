@@ -1,3 +1,4 @@
+import React from 'react';
 const Body = () => {
     return (<div>
         <h2>The editor body:</h2>
