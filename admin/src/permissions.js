@@ -3,8 +3,8 @@ const pluginPermissions = {
     // If the plugin link should be displayed in the menu
     // And also if the plugin is accessible. This use case is found when a user types the url of the
     // plugin directly in the browser
-    'menu-link': [{ action: 'plugin::tinymce.menu-link', subject: null }],
-    settings: [{ action: 'plugin::tinymce.settings.read', subject: null }],
+    'menu-link': [{ action: 'plugin::qbwa.menu-link', subject: null }],
+    settings: [{ action: 'plugin::qbwa.settings.read', subject: null }],
   };
   
   export default pluginPermissions;

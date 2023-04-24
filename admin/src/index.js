@@ -16,7 +16,7 @@ export default {
                 id: pluginId,
                 intlLabel: {
                     id: `${pluginId}.plugin.name`,
-                    defaultMessage: "TinyMCE",
+                    defaultMessage: "QBWA - TinyMCE WYSIWYG",
                 },
             },
             [

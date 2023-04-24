@@ -2,11 +2,11 @@ import { axiosInstance } from "../utils";
 
 const taskRequests = {
     getSettings: async () => {
-        const data = await axiosInstance.get(`/tinymce/settings`);
+        const data = await axiosInstance.get(`/qbwa/settings`);
         return data;
     },
     setSettings: async (data) => {
-        return await axiosInstance.post(`/tinymce/settings`, {
+        return await axiosInstance.post(`/qbwa/settings`, {
             apiKey: data,
         });
     },
