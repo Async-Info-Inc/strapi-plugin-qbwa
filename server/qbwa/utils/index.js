@@ -8,6 +8,6 @@ const setUpPublic = () => {
     }
 };
 
-export default {
+module.exports = {
     setUpPublic
 }
