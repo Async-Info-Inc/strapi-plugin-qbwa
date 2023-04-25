@@ -1,12 +1,23 @@
 const fs = require("fs");
 
+const publicFolder = "./public";
+const qbwaPublic = `${publicFolder}/qbwa`;
+const stylesFolder = `${qbwaPublic}/styles`;
+const requiredFolders = [qbwaPublic, stylesFolder];
+
+const createFolders = (folders) => {
+    folders.forEach(folder => {
+        if(!fs.existsSync(folder)){
+            console.log(">> QBWA", "Creating folder", folder, "...");
+            fs.mkdirSync(folder);
+        }else{
+            console.log(">> QBWA", "Folder", folder, "already exists");
+        }
+    });
+};
+
 const setUpPublic = () => {
-    const publicFolder = "./public";
-    const qbwaPublic = `${publicFolder}/qbwa`;
-    console.log(">> QBWA", fs.readdirSync(publicFolder));
-    if(!fs.existsSync(qbwaPublic)){
-        fs.mkdirSync(qbwaPublic);
-    }
+    createFolders(requiredFolders);
 };
 
 module.exports = {
