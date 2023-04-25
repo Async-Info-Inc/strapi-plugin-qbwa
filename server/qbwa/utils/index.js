@@ -3,6 +3,7 @@ const fs = require("fs");
 const publicFolder = "./public";
 const qbwaPublic = `${publicFolder}/qbwa`;
 const stylesFolder = `${qbwaPublic}/styles`;
+const styleIndex = `${stylesFolder}/index.css`;
 const requiredFolders = [qbwaPublic, stylesFolder];
 
 const createFolders = (folders) => {
@@ -16,8 +17,18 @@ const createFolders = (folders) => {
     });
 };
 
+const createStyleIndex = () => {
+    if(!fs.existsSync(styleIndex)){
+        console.log(">> QBWA", "Creating file", styleIndex, "...");
+        fs.writeFileSync(styleIndex, "");
+    }else{
+        console.log(">> QBWA", "File", styleIndex, "already exists");
+    }
+};
+
 const setUpPublic = () => {
     createFolders(requiredFolders);
+    createStyleIndex();
 };
 
 module.exports = {
