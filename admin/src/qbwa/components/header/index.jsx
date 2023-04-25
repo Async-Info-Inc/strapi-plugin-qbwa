@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { request } from "@strapi/helper-plugin";
+import taskRequests from "../../../api/settings";
 
 const Header = () => {
     const callCreate = async () => {
-        console.log(">> QBWA: callCreate()");
+        const data = await taskRequests.getStyleSheets();
+        console.log(">> QBWA: callCreate()", data);
     };
     const onCreateClick = () => {
         console.log(">> QBWA: onCreateClick()");
