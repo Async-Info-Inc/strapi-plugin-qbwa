@@ -20,7 +20,7 @@ const createFolders = (folders) => {
 const createStyleIndex = () => {
     if(!fs.existsSync(styleIndex)){
         console.log(">> QBWA", "🔨", "Creating file", styleIndex);
-        fs.writeFileSync(styleIndex, "");
+        fs.writeFileSync(styleIndex, ".example { color: red; }");
     }else{
         console.log(">> QBWA", "✅", "File", styleIndex, "already exists ");
     }
