@@ -16,7 +16,7 @@ const createStyleSheet = (name) => {
     }
 };
 
-const readStyleSheet = (name = 'index.css') => {
+const readStyleSheet = (name = 'index') => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     const file = fs.readFileSync(styleSheet, 'utf8');
     return file;
