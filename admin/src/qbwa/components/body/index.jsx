@@ -1,7 +1,7 @@
 import { Editor } from '@monaco-editor/react';
 import React from 'react';
 
-import indexFile from './index.css';
+import indexFile from '/qbwa/styles/index.css';
 
 const Body = () => {
     return (<div>
