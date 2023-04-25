@@ -16,6 +16,12 @@ const createStyleSheet = (name) => {
     }
 };
 
+const readStyleSheet = (name = 'index.css') => {
+    const styleSheet = `${stylesFolder}/${name}.css`;
+    const file = fs.readFileSync(styleSheet, 'utf8');
+    return file;
+};
+
 const createFolders = (folders) => {
     folders.forEach(folder => {
         if(!fs.existsSync(folder)){
@@ -42,5 +48,6 @@ const setUpPublic = () => {
 };
 
 module.exports = {
-    setUpPublic
+    setUpPublic,
+    readStyleSheet
 }
