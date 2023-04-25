@@ -6,6 +6,16 @@ const stylesFolder = `${qbwaPublic}/styles`;
 const styleIndex = `${stylesFolder}/index.css`;
 const requiredFolders = [qbwaPublic, stylesFolder];
 
+const createStyleSheet = (name) => {
+    const styleSheet = `${stylesFolder}/${name}.css`;
+    if(!fs.existsSync(styleSheet)){
+        console.log(">> QBWA", "🔨", "Creating file", styleSheet);
+        fs.writeFileSync(styleSheet, "");
+    }else{
+        console.log(">> QBWA", "✅", "File", styleSheet, "already exists");
+    }
+};
+
 const createFolders = (folders) => {
     folders.forEach(folder => {
         if(!fs.existsSync(folder)){
