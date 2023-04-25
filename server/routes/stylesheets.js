@@ -4,7 +4,7 @@ module.exports = {
         {
             method: "GET",
             path: "/stylesheets",
-            handler: "plugin::qbwa.stylesheets.getStyleSheets",
+            handler: "plugin::qbwa.styleSheets.getStyleSheets",
             config: {
                 policies: [],
                 auth: false,
