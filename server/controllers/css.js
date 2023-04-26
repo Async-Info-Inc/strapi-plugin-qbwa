@@ -1,6 +1,6 @@
 "use strict";
 
-const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet } = require("../../qbwa/be/css");
+const cssService = strapi.plugin("qbwa").service("css");
 
 module.exports = {
     getFile: async (ctx) => {
@@ -10,9 +10,9 @@ module.exports = {
         console.log("name: ", name);
         console.groupEnd();
         try {
-            let body = readStyleSheet(name);
+            let body = await cssService.readFile(name);
             if(name === 'index'){
-                body = listStyleSheets();
+                body = await cssService.listFiles();
             }
             ctx.body = body;
         } catch (err) {
@@ -33,9 +33,9 @@ module.exports = {
         console.groupEnd();
         try {
             if(action === 'delete'){
-                ctx.body = deleteStyleSheet(name);
+                ctx.body = await cssService.deleteFile(name);
             }else{
-                ctx.body = createStyleSheet(name, data);
+                ctx.body = await cssService.writeFile(name, data);
             }
         } catch (err) {
             ctx.body = err;
