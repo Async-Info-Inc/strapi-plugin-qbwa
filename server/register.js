@@ -1,9 +1,8 @@
 'use strict';
 
-const setUpPublic = require('../qbwa/be/css').setUpPublic;
-
 module.exports = ({ strapi }) => {
   // registeration phase
   console.log(">> 🗑", " Registering plugin...");
-  setUpPublic();
+  const cssService = strapi.plugin("qbwa").service("css");
+  cssService.init();
 };
