@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { Box } from '@strapi/design-system/Box';
-import { Layout,BaseHeaderLayout, Button, SingleSelect, SingleSelectOption } from '@strapi/design-system';
+import { Layout, BaseHeaderLayout, Button, SingleSelect } from '@strapi/design-system';
 import Plus from '@strapi/icons/Plus';
 import api from "../../../../qbwa/fe/css";
 
@@ -13,12 +13,12 @@ const HomePage = () => {
             setFileOptions(data.data);
         });
     }, []);
-
+/*
     const selectOptions = fileOptions.map((file) => {
         console.log("Creating file option: ", file);
         return <SingleSelectOption value={file}>{file}</SingleSelectOption>
     });
-
+*/
     return <Box>
         <Layout>
             <Box background="neutral100">
@@ -26,7 +26,7 @@ const HomePage = () => {
             </Box>
             <Box padding={8} background="neutral100">
                 <SingleSelect label="StyleSheets" placeholder="Select file..." hint="The StyleSheet you want to edit.">
-                    {selectOptions}
+                    {/* {selectOptions} */}
                 </SingleSelect>
                 <Button variant="success">Add</Button>
                 <Button startIcon={Plus} variant="danger">Remove</Button>
