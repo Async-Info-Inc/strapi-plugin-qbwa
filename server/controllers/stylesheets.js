@@ -23,17 +23,17 @@ module.exports = {
         const data = body.data || '';
         const action = body.action || '';
         console.log(">> QBWA: setStyleSheet controller");
-        console.group()
+        console.group();
         console.log("name: ", name);
         console.log("data: ", data)
         console.log("action: ", action);
-        console.groupEnd()
-
-        if(action === 'delete'){
-            ctx.body = deleteStyleSheet(name);
-        }
+        console.groupEnd();
         try {
-            ctx.body = createStyleSheet(name, data);
+            if(action === 'delete'){
+                ctx.body = deleteStyleSheet(name);
+            }else{
+                ctx.body = createStyleSheet(name, data);
+            }
         } catch (err) {
             ctx.body = err;
             ctx.throw(500, err);
