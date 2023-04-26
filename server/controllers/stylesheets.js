@@ -18,11 +18,17 @@ module.exports = {
         }
     },
     setStyleSheet: async (ctx) => {
-        // console.log(">> QBWA: setStyleSheet controller", name);
         const { body } = ctx.request;
         const name = body.name || 'index';
         const data = body.data || '';
         const action = body.data || '';
+        console.log(">> QBWA: setStyleSheet controller");
+        console.group()
+        console.log("name: ", name);
+        console.log("data: ", data)
+        console.log("action: ", action);
+        console.groupEnd()
+        
         if(action === 'delete'){
             ctx.body = deleteStyleSheet(name);
         }
