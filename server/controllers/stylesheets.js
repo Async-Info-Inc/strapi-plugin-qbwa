@@ -11,7 +11,7 @@ module.exports = {
             if(name === 'index'){
                 body = listStyleSheets();
             }
-            ctx.body = readStyleSheet(name);
+            ctx.body = body;
         } catch (err) {
             ctx.body = err;
             ctx.throw(500, err);
