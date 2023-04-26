@@ -6,6 +6,10 @@ const stylesFolder = `${qbwaPublic}/styles`;
 const styleIndex = `${stylesFolder}/index.css`;
 const requiredFolders = [qbwaPublic, stylesFolder];
 
+const listStyleSheets = () => {
+    return fs.readdirSync(stylesFolder)
+};
+
 const createStyleSheet = (name, data) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(!fs.existsSync(styleSheet)){
@@ -50,5 +54,6 @@ const setUpPublic = () => {
 module.exports = {
     setUpPublic,
     readStyleSheet,
-    createStyleSheet
+    createStyleSheet,
+    listStyleSheets,
 }
