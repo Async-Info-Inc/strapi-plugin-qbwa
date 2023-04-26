@@ -49,5 +49,6 @@ const setUpPublic = () => {
 
 module.exports = {
     setUpPublic,
-    readStyleSheet
+    readStyleSheet,
+    createStyleSheet
 }

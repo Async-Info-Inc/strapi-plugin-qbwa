@@ -9,6 +9,15 @@ module.exports = {
                 policies: [],
                 auth: false,
             },
-        }
+        },
+        {
+            method: "POST",
+            path: "/stylesheets",
+            handler: "plugin::qbwa.styleSheets.createStyleSheet",
+            config: {
+                policies: [],
+                auth: false,
+            },
+        },
     ],
 };
