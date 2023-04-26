@@ -3,15 +3,15 @@
 const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet } = require("../../qbwa/be/css");
 
 module.exports = {
-    getStyleSheet: async (ctx) => {
-        console.log(">> 🗑: getStyleSheet controller");
+    getFile: async (ctx) => {
+        const name = ctx.request.query.name || 'index';
+        console.log(">> 🗑: css:getFile controller");
         console.group();
         console.log("name: ", name);
         console.log("data: ", data)
         console.log("action: ", action);
         console.groupEnd();
         try {
-            const name = ctx.request.query.name || 'index';
             let body = readStyleSheet(name);
             if(name === 'index'){
                 body = listStyleSheets();
@@ -22,12 +22,12 @@ module.exports = {
             ctx.throw(500, err);
         }
     },
-    setStyleSheet: async (ctx) => {
+    setFile: async (ctx) => {
         const { body } = ctx.request;
         const name = body.name || 'index';
         const data = body.data || '';
         const action = body.action || '';
-        console.log(">> 🗑: setStyleSheet controller");
+        console.log(">> 🗑: css:setFile controller");
         console.group();
         console.log("name: ", name);
         console.log("data: ", data)

@@ -4,7 +4,7 @@ module.exports = {
         {
             method: "GET",
             path: "/css",
-            handler: "plugin::qbwa.css.getStyleSheet",
+            handler: "plugin::qbwa.css.getFile",
             config: {
                 policies: [],
                 auth: false,
@@ -13,7 +13,7 @@ module.exports = {
         {
             method: "POST",
             path: "/css",
-            handler: "plugin::qbwa.css.setStyleSheet",
+            handler: "plugin::qbwa.css.setFile",
             config: {
                 policies: [],
                 auth: false,
