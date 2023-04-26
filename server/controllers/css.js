@@ -10,9 +10,11 @@ module.exports = {
         console.log("name: ", name);
         console.groupEnd();
         try {
-            let body = await cssService.readFile(name);
+            let body = '';
             if(name === 'index'){
                 body = await cssService.listFiles();
+            }else{
+                body = await cssService.readFile(name);
             }
             ctx.body = body;
         } catch (err) {
