@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { Box } from '@strapi/design-system/Box';
-import { Layout, BaseHeaderLayout, Button, SingleSelect } from '@strapi/design-system';
+import { Layout, BaseHeaderLayout, Button } from '@strapi/design-system';
 import Plus from '@strapi/icons/Plus';
 import api from "../../../../qbwa/fe/css";
 
@@ -25,9 +25,9 @@ const HomePage = () => {
                 <BaseHeaderLayout title="QBWA" subtitle={`Quickly Build Web Apps`} as="h2" />
             </Box>
             <Box padding={8} background="neutral100">
-                <SingleSelect label="StyleSheets" placeholder="Select file..." hint="The StyleSheet you want to edit.">
+                {/* <SingleSelect label="StyleSheets" placeholder="Select file..." hint="The StyleSheet you want to edit."> */}
                     {/* {selectOptions} */}
-                </SingleSelect>
+                {/* </SingleSelect> */}
                 <Button variant="success">Add</Button>
                 <Button startIcon={Plus} variant="danger">Remove</Button>
             </Box>
