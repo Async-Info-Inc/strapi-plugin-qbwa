@@ -1,11 +1,9 @@
 import React from 'react';
-
-import { request } from "@strapi/helper-plugin";
-import api from "../../../api/styleSheets";
+import api from "../../../../../qbwa/fe/css";
 
 const Header = () => {
     const callCreate = async () => {
-        const data = await api.createStyleSheet('foo', '.example2 { color: teal; }');
+        const data = await api.createFile('foo', '.example2 { color: teal; }');
         console.log(">> QBWA: callCreate()", data);
     };
     const onCreateClick = () => {
@@ -14,7 +12,7 @@ const Header = () => {
     };
     const onGetClick = () => {
         console.log(">> QBWA: onGetClick()");
-        api.getStyleSheets();
+        api.getFile();
     }
 
     return (<div>

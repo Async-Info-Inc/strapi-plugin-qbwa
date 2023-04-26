@@ -1,9 +1,9 @@
 const config = require("./config");
-const settings = require("./settings");
-const styleSheets = require("./stylesheets");
+const css = require("./settings");
+const styleSheets = require("./css");
 
 module.exports = {
     config,
     settings,
-    styleSheets
+    css
 };

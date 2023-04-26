@@ -1,11 +1,11 @@
-import { axiosInstance } from "../utils";
+import { axiosInstance } from "../../admin/src/utils/axiosInstance";
 
 const taskRequests = {
-    getStyleSheets: async () => {
+    getFile: async () => {
         const data = await axiosInstance.get(`/qbwa/styleSheets?name=index`);
         return data;
     },
-    createStyleSheet: async (name, data) => {
+    createFile: async (name, data) => {
         return await axiosInstance.post(`/qbwa/styleSheets`, {
             name: name,
             data: data,

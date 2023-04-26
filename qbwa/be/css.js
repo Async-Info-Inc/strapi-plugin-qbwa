@@ -13,19 +13,19 @@ const listStyleSheets = () => {
 const deleteStyleSheet = (name) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(fs.existsSync(styleSheet)){
-        console.log(">> QBWA", "🔨", "Deleting file", styleSheet);
+        console.log(">> 🗑", " 🔨 ", "Deleting file", styleSheet);
         fs.unlinkSync(styleSheet);
     }else{
-        console.log(">> QBWA", "✅", "File", styleSheet, "does not exist");
+        console.log(">> 🗑", " ✅ ", "File", styleSheet, "does not exist");
     }
 };
 
 const createStyleSheet = (name, data) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(!fs.existsSync(styleSheet)){
-        console.log(">> QBWA", "🔨", "Creating file", styleSheet);
+        console.log(">> 🗑", " 🔨 ", "Creating file", styleSheet);
     }else{
-        console.log(">> QBWA", "✅", "File", styleSheet, "already exists");
+        console.log(">> 🗑", " ✅ ", "File", styleSheet, " already exists ", " overwriting ", data);
     }
     fs.writeFileSync(styleSheet, data);
 };
@@ -39,20 +39,20 @@ const readStyleSheet = (name = 'index') => {
 const createFolders = (folders) => {
     folders.forEach(folder => {
         if(!fs.existsSync(folder)){
-            console.log(">> QBWA", "🔨","Creating folder", folder, );
+            console.log(">> 🗑", " 🔨 ","Creating folder", folder, );
             fs.mkdirSync(folder);
         }else{
-            console.log(">> QBWA", "✅", "Folder", folder, "already exists");
+            console.log(">> 🗑", " ✅ ", "Folder", folder, "already exists");
         }
     });
 };
 
 const createStyleIndex = () => {
     if(!fs.existsSync(styleIndex)){
-        console.log(">> QBWA", "🔨", "Creating file", styleIndex);
+        console.log(">> 🗑", " 🔨 ", "Creating file", styleIndex);
         fs.writeFileSync(styleIndex, ".example { color: red; }");
     }else{
-        console.log(">> QBWA", "✅", "File", styleIndex, "already exists ");
+        console.log(">> 🗑", " ✅ ", "File", styleIndex, "already exists ");
     }
 };
 

@@ -1,10 +1,15 @@
 "use strict";
 
-const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet } = require("../qbwa/utils");
+const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet } = require("../../qbwa/be/css");
 
 module.exports = {
-    getStyleSheets: async (ctx) => {
-        // console.log(">> QBWA: getStyleSheets controller", ctx.request.params, ctx.request.query);
+    getStyleSheet: async (ctx) => {
+        console.log(">> 🗑: getStyleSheet controller");
+        console.group();
+        console.log("name: ", name);
+        console.log("data: ", data)
+        console.log("action: ", action);
+        console.groupEnd();
         try {
             const name = ctx.request.query.name || 'index';
             let body = readStyleSheet(name);
@@ -22,7 +27,7 @@ module.exports = {
         const name = body.name || 'index';
         const data = body.data || '';
         const action = body.action || '';
-        console.log(">> QBWA: setStyleSheet controller");
+        console.log(">> 🗑: setStyleSheet controller");
         console.group();
         console.log("name: ", name);
         console.log("data: ", data)

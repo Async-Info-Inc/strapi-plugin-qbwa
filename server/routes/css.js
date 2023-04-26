@@ -3,8 +3,8 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path: "/stylesheets",
-            handler: "plugin::qbwa.styleSheets.getStyleSheets",
+            path: "/css",
+            handler: "plugin::qbwa.css.getStyleSheet",
             config: {
                 policies: [],
                 auth: false,
@@ -12,8 +12,8 @@ module.exports = {
         },
         {
             method: "POST",
-            path: "/stylesheets",
-            handler: "plugin::qbwa.styleSheets.setStyleSheet",
+            path: "/css",
+            handler: "plugin::qbwa.css.setStyleSheet",
             config: {
                 policies: [],
                 auth: false,
