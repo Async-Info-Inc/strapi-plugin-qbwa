@@ -9,6 +9,7 @@ const HomePage = () => {
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
+            console.log("Get All Files: ", data);
             setFileOptions(data.data);
         });
     }, []);
