@@ -15,6 +15,7 @@ const HomePage = () => {
     }, []);
 
     const selectOptions = fileOptions.map((file) => {
+        console.log("Creating file option: ", file);
         return <SingleSelectOption value={file}>{file}</SingleSelectOption>
     });
 
@@ -24,7 +25,7 @@ const HomePage = () => {
                 <BaseHeaderLayout title="QBWA" subtitle={`Quickly Build Web Apps`} as="h2" />
             </Box>
             <Box padding={8} background="neutral100">
-                <SingleSelect label="Fruits" required placeholder="Select file..." hint="The StyleSheet you want to edit.">
+                <SingleSelect label="StyleSheets" placeholder="Select file..." hint="The StyleSheet you want to edit.">
                     {selectOptions}
                 </SingleSelect>
                 <Button variant="success">Add</Button>
