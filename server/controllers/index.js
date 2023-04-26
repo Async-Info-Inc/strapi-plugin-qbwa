@@ -7,5 +7,5 @@ const css = require("./css");
 module.exports = {
     config,
     settings,
-    styleSheets
+    css
 };
