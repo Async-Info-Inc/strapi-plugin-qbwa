@@ -1,6 +1,6 @@
 "use strict";
 
-const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet, setUpPublic } = require("../../qbwa/be/css");
+const { readStyleSheet, writeStyleSheet, listStyleSheets, deleteStyleSheet, setUpPublic } = require("../../qbwa/be/css");
 
 module.exports = () => {
     return {
@@ -21,7 +21,7 @@ module.exports = () => {
             console.log("name: ", name);
             console.log("data: ", data);
             console.groupEnd();
-            return createStyleSheet(name, data);
+            return writeStyleSheet(name, data);
         },
         listFiles: async () => {
             console.log(">> 🗑: css:listFiles service");

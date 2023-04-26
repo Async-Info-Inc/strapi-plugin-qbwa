@@ -57,7 +57,7 @@ const createFolders = (folders) => {
 const createStyleIndex = () => {
     if(!fs.existsSync(styleIndex)){
         console.log(">> 🗑", " 🔨 ", "Creating file", styleIndex);
-        fs.writeFileSync(styleIndex, ".example { color: red; }");
+        fs.writeFileSync(styleIndex, "");
     }else{
         console.log(">> 🗑", " ✅ ", "File", styleIndex, "already exists ");
     }
@@ -71,7 +71,7 @@ const setUpPublic = () => {
 module.exports = {
     setUpPublic,
     readStyleSheet,
-    createStyleSheet: writeStyleSheet,
+    writeStyleSheet,
     listStyleSheets,
     deleteStyleSheet
 }
