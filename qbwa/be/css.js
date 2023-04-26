@@ -12,6 +12,14 @@ const addToIndex = (name) => {
     fs.appendFileSync(styleIndex, styleSheetImport);
 };
 
+const removeFromIndex = (name) => {
+    const indexData = readStyleSheet();
+    const styleSheetImport = `@import url(./${name}.css);\n`;
+    console.log(">> 🗑", " 🔨 ", "Removing from index ", name);
+    indexData.replace(styleSheetImport, "");
+    writeStyleSheet('index', indexData);
+};
+
 const listStyleSheets = () => {
     return fs.readdirSync(stylesFolder)
 };
@@ -21,6 +29,7 @@ const deleteStyleSheet = (name) => {
     if(fs.existsSync(styleSheet)){
         console.log(">> 🗑", " 🔨 ", "Deleting file", styleSheet);
         fs.unlinkSync(styleSheet);
+        removeFromIndex(name);
     }else{
         console.log(">> 🗑", " ✅ ", "File", styleSheet, "does not exist");
     }
