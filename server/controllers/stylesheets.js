@@ -1,6 +1,6 @@
 "use strict";
 
-const { readStyleSheet, createStyleSheet, listStyleSheets } = require("../qbwa/utils");
+const { readStyleSheet, createStyleSheet, listStyleSheets, deleteStyleSheet } = require("../qbwa/utils");
 
 module.exports = {
     getStyleSheets: async (ctx) => {
@@ -22,6 +22,10 @@ module.exports = {
         const { body } = ctx.request;
         const name = body.name || 'index';
         const data = body.data || '';
+        const action = body.data || '';
+        if(action === 'delete'){
+            ctx.body = deleteStyleSheet(name);
+        }
         try {
             ctx.body = createStyleSheet(name, data);
         } catch (err) {

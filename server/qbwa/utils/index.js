@@ -10,6 +10,16 @@ const listStyleSheets = () => {
     return fs.readdirSync(stylesFolder)
 };
 
+const deleteStyleSheet = (name) => {
+    const styleSheet = `${stylesFolder}/${name}.css`;
+    if(fs.existsSync(styleSheet)){
+        console.log(">> QBWA", "🔨", "Deleting file", styleSheet);
+        fs.unlinkSync(styleSheet);
+    }else{
+        console.log(">> QBWA", "✅", "File", styleSheet, "does not exist");
+    }
+};
+
 const createStyleSheet = (name, data) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(!fs.existsSync(styleSheet)){
@@ -56,4 +66,5 @@ module.exports = {
     readStyleSheet,
     createStyleSheet,
     listStyleSheets,
+    deleteStyleSheet
 }
