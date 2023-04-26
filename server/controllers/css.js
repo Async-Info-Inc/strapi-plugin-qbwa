@@ -8,8 +8,6 @@ module.exports = {
         console.log(">> 🗑: css:getFile controller");
         console.group();
         console.log("name: ", name);
-        console.log("data: ", data)
-        console.log("action: ", action);
         console.groupEnd();
         try {
             let body = readStyleSheet(name);
