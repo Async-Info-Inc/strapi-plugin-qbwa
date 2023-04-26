@@ -1,4 +1,4 @@
-import { axiosInstance } from "../../admin/src/utils/axiosInstance";
+import { axiosInstance } from "../../admin/src/utils";
 
 const taskRequests = {
     getAllFiles: async () => {
