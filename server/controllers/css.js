@@ -41,7 +41,7 @@ module.exports = {
             if(action === 'delete'){
                 ctx.body = await cssService.deleteFile(name);
             }else{
-                if(!data){
+                if(data){
                     ctx.body = await cssService.writeFile(name, data);
                 }else{
                     ctx.throw(500, 'Missing data');
