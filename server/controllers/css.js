@@ -1,9 +1,9 @@
 "use strict";
 
-const cssService = strapi.plugin("qbwa").service("css");
 
 module.exports = {
     getFile: async (ctx) => {
+        const cssService = strapi.plugin("qbwa").service("css");
         const name = ctx.request.query.name || 'index';
         console.log(">> 🗑: css:getFile controller");
         console.group();
@@ -21,9 +21,10 @@ module.exports = {
         }
     },
     setFile: async (ctx) => {
+        const cssService = strapi.plugin("qbwa").service("css");
         const { body } = ctx.request;
-        const name = body.name || 'index';
-        const data = body.data || '';
+        const name = body.name || null;
+        const data = body.data || null;
         const action = body.action || '';
         console.log(">> 🗑: css:setFile controller");
         console.group();
@@ -32,6 +33,9 @@ module.exports = {
         console.log("action: ", action);
         console.groupEnd();
         try {
+            if(!name || !data){
+                ctx.throw(500, 'Missing name or data');
+            }
             if(action === 'delete'){
                 ctx.body = await cssService.deleteFile(name);
             }else{
