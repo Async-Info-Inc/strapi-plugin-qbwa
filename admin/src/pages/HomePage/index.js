@@ -24,10 +24,11 @@ const HomePage = () => {
                 <BaseHeaderLayout title="QBWA" subtitle={`Quickly Build Web Apps`} as="h2" />
             </Box>
             <Box padding={8} background="neutral100">
-                {/* <SingleSelect label="Fruits" required placeholder="Select file..." hint="The StyleSheet you want to edit.">
+                <SingleSelect label="Fruits" required placeholder="Select file..." hint="The StyleSheet you want to edit.">
                     {selectOptions}
-                </SingleSelect> */}
-                <Button icon={Plus} label="Add" />
+                </SingleSelect>
+                <Button variant="success">Add</Button>
+                <Button startIcon={Plus} variant="danger">Remove</Button>
             </Box>
         </Layout>
     </Box>
