@@ -7,7 +7,7 @@ const styleIndex = `${stylesFolder}/index.css`;
 const requiredFolders = [qbwaPublic, stylesFolder];
 
 const addToIndex = (name) => {
-    const styleSheetImport = `import url('./${name}.css');\n`;
+    const styleSheetImport = `import url(./${name}.css);\n`;
     console.log(">> 🗑", " 🔨 ", "Adding to index ", name);
     fs.appendFileSync(styleIndex, styleSheetImport);
 };
