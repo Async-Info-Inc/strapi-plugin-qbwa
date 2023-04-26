@@ -4,7 +4,7 @@ const { readStyleSheet } = require("../qbwa/utils");
 
 module.exports = {
     getStyleSheets: async (ctx) => {
-        console.log(">> QBWA: getStyleSheets controller");
+        console.log(">> QBWA: getStyleSheets controller", ctx);
         try {
             ctx.body = readStyleSheet();
         } catch (err) {

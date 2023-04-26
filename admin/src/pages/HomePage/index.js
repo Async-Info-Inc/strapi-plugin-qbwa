@@ -1,7 +1,7 @@
 import React, { memo } from "react";
-import Header from "../../qbwa/components/header";
-import Body from "../../qbwa/components/body";
-import Footer from "../../qbwa/components/footer";
+import Header from "../../components/QBWA/header";
+import Body from "../../components/QBWA/body";
+import Footer from "../../components/QBWA/footer";
 
 const HomePage = () => {
     return <div>

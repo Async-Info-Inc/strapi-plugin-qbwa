@@ -10,9 +10,5 @@ const taskRequests = {
             apiKey: data,
         });
     },
-    getStyleSheets: async () => {
-        const data = await axiosInstance.get(`/qbwa/styleSheets`);
-        return data;
-    },
 };
 export default taskRequests;
