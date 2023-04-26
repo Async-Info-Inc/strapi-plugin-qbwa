@@ -35,13 +35,18 @@ module.exports = {
         console.log("action: ", action);
         console.groupEnd();
         try {
-            if(!name || !data){
-                ctx.throw(500, 'Missing name or data');
+            if(!name){
+                ctx.throw(500, 'Missing name');
             }
             if(action === 'delete'){
                 ctx.body = await cssService.deleteFile(name);
             }else{
-                ctx.body = await cssService.writeFile(name, data);
+                if(!data){
+                    ctx.body = await cssService.writeFile(name, data);
+                }else{
+                    ctx.throw(500, 'Missing data');
+                }
+                
             }
         } catch (err) {
             ctx.body = err;
