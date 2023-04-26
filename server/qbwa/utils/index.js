@@ -10,10 +10,10 @@ const createStyleSheet = (name, data) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(!fs.existsSync(styleSheet)){
         console.log(">> QBWA", "🔨", "Creating file", styleSheet);
-        fs.writeFileSync(styleSheet, data);
     }else{
         console.log(">> QBWA", "✅", "File", styleSheet, "already exists");
     }
+    fs.writeFileSync(styleSheet, data);
 };
 
 const readStyleSheet = (name = 'index') => {

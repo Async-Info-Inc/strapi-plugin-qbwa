@@ -19,7 +19,7 @@ module.exports = {
         const data = body.data || '';
         console.log(">> QBWA: setStyleSheet controller", name);
         try {
-            ctx.body = createStyleSheet(name);
+            ctx.body = createStyleSheet(name, data);
         } catch (err) {
             ctx.body = err;
             ctx.throw(500, err);
