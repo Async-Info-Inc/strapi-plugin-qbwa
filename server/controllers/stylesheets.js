@@ -15,9 +15,9 @@ module.exports = {
     },
     setStyleSheet: async (ctx) => {
         const { body } = ctx.request;
-        console.log(">> QBWA: setStyleSheet controller", ctx.request, body);
+        const name = body.name || 'index';
+        console.log(">> QBWA: setStyleSheet controller", name);
         try {
-            const name = ctx.request.query.name || 'index';
             ctx.body = createStyleSheet(name);
         } catch (err) {
             ctx.body = err;
