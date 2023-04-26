@@ -5,7 +5,7 @@ import api from "../../../api/styleSheets";
 
 const Header = () => {
     const callCreate = async () => {
-        const data = await api.createStyleSheet('foo');
+        const data = await api.createStyleSheet('foo', '.example2 { color: teal; }');
         console.log(">> QBWA: callCreate()", data);
     };
     const onCreateClick = () => {

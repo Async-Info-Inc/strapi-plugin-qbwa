@@ -5,9 +5,10 @@ const taskRequests = {
         const data = await axiosInstance.get(`/qbwa/styleSheets?name=index`);
         return data;
     },
-    createStyleSheet: async (name) => {
+    createStyleSheet: async (name, data) => {
         return await axiosInstance.post(`/qbwa/styleSheets`, {
             name: name,
+            data: data,
         });
     }
 };
