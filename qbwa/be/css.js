@@ -16,7 +16,7 @@ const removeFromIndex = (name) => {
     const indexData = readStyleSheet();
     const styleSheetImport = `@import url(./${name}.css);\n`;
     console.log(">> 🗑", " 🔨 ", "Removing from index ", name);
-    indexData.replace(styleSheetImport, "");
+    indexData = indexData.replace(styleSheetImport, "");
     deleteStyleSheet('index');
     writeStyleSheet('index', indexData);
 };
