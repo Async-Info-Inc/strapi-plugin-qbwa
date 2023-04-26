@@ -6,6 +6,12 @@ const stylesFolder = `${qbwaPublic}/styles`;
 const styleIndex = `${stylesFolder}/index.css`;
 const requiredFolders = [qbwaPublic, stylesFolder];
 
+const addToIndex = (name) => {
+    const styleSheetImport = `import url('./${name}.css');\n')`;
+    console.log(">> 🗑", " 🔨 ", "Adding to index ", name);
+    fs.appendFileSync(styleIndex, styleSheetImport);
+};
+
 const listStyleSheets = () => {
     return fs.readdirSync(stylesFolder)
 };
@@ -20,10 +26,11 @@ const deleteStyleSheet = (name) => {
     }
 };
 
-const createStyleSheet = (name, data) => {
+const writeStyleSheet = (name, data) => {
     const styleSheet = `${stylesFolder}/${name}.css`;
     if(!fs.existsSync(styleSheet)){
         console.log(">> 🗑", " 🔨 ", "Creating file", styleSheet);
+        addToIndex(name);
     }else{
         console.log(">> 🗑", " ✅ ", "File", styleSheet, " already exists ", " overwriting ", data);
     }
@@ -64,7 +71,7 @@ const setUpPublic = () => {
 module.exports = {
     setUpPublic,
     readStyleSheet,
-    createStyleSheet,
+    createStyleSheet: writeStyleSheet,
     listStyleSheets,
     deleteStyleSheet
 }
