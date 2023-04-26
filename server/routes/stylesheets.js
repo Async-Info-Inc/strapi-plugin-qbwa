@@ -13,7 +13,7 @@ module.exports = {
         {
             method: "POST",
             path: "/stylesheets",
-            handler: "plugin::qbwa.styleSheets.createStyleSheet",
+            handler: "plugin::qbwa.styleSheets.setStyleSheet",
             config: {
                 policies: [],
                 auth: false,
