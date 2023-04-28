@@ -9,7 +9,7 @@ import SingleSelect from "../../components/QBWA/SingleSelect";
 const HomePage = () => {
     return <Box>
         <Layout>
-            <SingleSelect />
+            <SingleSelect label="CSS stylesheets available:" options={['foo', 'bar', 'baz']}/>
             {/* <Header />
             <Body />
             <Footer /> */}

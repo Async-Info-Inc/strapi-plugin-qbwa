@@ -1,15 +1,18 @@
 import React from "react";
 import Logger from "../../../../../qbwa/utils/Logger";
-const SingleSelect = ({ label = "label: " }) => {
+const SingleSelect = ({ label = "label: ", options = [] }) => {
     Logger.log("SingleSelect", [
         `label: ${label}`
+        `options: ${Logger.arrayToString(options)}`
     ]);
+    const optionEls = options.map((option) => {
+        return <option value={option}>{option}</option>;
+    });
     return (
         <div>
             <label>{label}</label>
             <select>
-                <option value="1">1</option>
-                <option value="2">2</option>
+                {optionEls}
             </select>
         </div>
     );
