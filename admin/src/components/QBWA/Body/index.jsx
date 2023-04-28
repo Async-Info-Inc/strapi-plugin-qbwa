@@ -23,8 +23,8 @@ const Body = () => {
     return (
         <div>
             {/* <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} />  */}
-            <select onChange={handleChange}>
-            {selectOptions.map((option) => {
+            <select onChange={() => {}}>
+            {fileOptions.map((option) => {
                     console.log(`Making option for: ${JSON.stringify(option)}`);
                     return (<option>
                         {option}
