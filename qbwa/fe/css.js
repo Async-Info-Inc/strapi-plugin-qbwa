@@ -5,11 +5,11 @@ const api_base = '/qbwa/css';
 const taskRequests = {
     getAllFiles: async () => {
         const data = await axiosInstance.get(`${api_base}?name=index`);
-        return data;
+        return data.data;
     },
     getFile: async (name) => {
         const data = await axiosInstance.get(`${api_base}?name=${name}`);
-        return data;
+        return data.data;
     },
     writeFile: async (name, data) => {
         return await axiosInstance.post(`${api_base}`, {

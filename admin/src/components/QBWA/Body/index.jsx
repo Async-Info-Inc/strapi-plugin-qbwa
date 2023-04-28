@@ -11,21 +11,21 @@ const Body = () => {
         console.log("On Change: ", value);
         api.getFile(value).then((data) => {
             console.log("Get File: ", data);
-            setEditorModel(data.data);
+            setEditorModel(data);
         });
     };
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
             console.log("Get All Files: ", data);
-            setFileOptions(data.data);
+            setFileOptions(data);
         });
     }, []);
 
     return (
         <div>
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
-            <Editor height="90vh" defaultLanguage="css" defaultValue={editorModel}/>
+            <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} />
         </div>
     );
 };
