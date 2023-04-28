@@ -22,7 +22,7 @@ const Body = () => {
     };
 
     useEffect(() => {
-        api.getFile(value).then((data) => {
+        api.getFile(selectedFile).then((data) => {
             console.log("Get File: ", data);
             setEditorModel(data);
         });
