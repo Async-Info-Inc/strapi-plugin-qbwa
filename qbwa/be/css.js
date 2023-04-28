@@ -21,7 +21,7 @@ const removeFromIndex = (name) => {
 };
 
 const listStyleSheets = () => {
-    return fs.readdirSync(stylesFolder)
+    return fs.readdirSync(stylesFolder).filter(file => file!=='index.css').map(file => file.replace('.css', ''));
 };
 
 const deleteStyleSheet = (name) => {
