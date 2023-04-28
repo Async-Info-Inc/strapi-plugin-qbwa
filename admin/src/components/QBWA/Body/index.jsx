@@ -1,9 +1,10 @@
 import { Editor } from '@monaco-editor/react';
 import React, {useEffect, useState, memo} from 'react';
+import SingleSelect from '../SingleSelect';
 // import SingleSelect from '../SingleSelect';
 
 const Body = () => {
-    const [fileOptions, setFileOptions] = useState(['loading']);
+    const [fileOptions, setFileOptions] = useState([]);
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
@@ -12,25 +13,9 @@ const Body = () => {
         });
     }, []);
 
-    const selectOptions = fileOptions.map((file) => {
-        console.log("Creating file option: ", file);
-        return {
-            label: file,
-            value: file,
-        }
-    });
-
     return (
         <div>
-            {/* <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} />  */}
-            <select onChange={() => {}}>
-            {fileOptions.map((option) => {
-                    console.log(`Making option for: ${JSON.stringify(option)}`);
-                    return (<option>
-                        {option}
-                    </option>);
-                })}
-            </select>
+            <SingleSelect label="File" options={selectOptions} /> 
             <Editor height="90vh" defaultLanguage="css" defaultValue=""/>
         </div>
     );

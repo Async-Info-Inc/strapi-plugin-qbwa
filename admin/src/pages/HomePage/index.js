@@ -4,15 +4,13 @@ import { Layout, BaseHeaderLayout, Button } from '@strapi/design-system';
 import Header from "../../components/QBWA/Header";
 import Body from "../../components/QBWA/Body";
 import Footer from "../../components/QBWA/Footer";
-import SingleSelect from "../../components/QBWA/SingleSelect";
 
 const HomePage = () => {
     return <Box>
         <Layout>
-            <SingleSelect label="CSS stylesheets available:" options={['foo', 'bar', 'baz']}/>
-            {/* <Header />
+            <Header />
             <Body />
-            <Footer /> */}
+            <Footer />
         </Layout>
     </Box>
 };
