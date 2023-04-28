@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 const Footer = () => {
     return <div>
         © 2023 Async Info Inc. All rights reserved.
     </div>
 };
 
-export default Footer;
+export default memo(Footer);

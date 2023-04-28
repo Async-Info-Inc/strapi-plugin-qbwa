@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 const SingleSelect = ({ label = "label: ", options, value, onChange }) => {
     const handleChange = (e) => {
         console.log(`SingleSelect: handleChange: ${e.target.value}`);

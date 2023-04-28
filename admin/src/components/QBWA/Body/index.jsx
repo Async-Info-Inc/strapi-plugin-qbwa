@@ -1,5 +1,5 @@
 import { Editor } from '@monaco-editor/react';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import SingleSelect from '../SingleSelect';
 
 const Body = () => {
@@ -28,4 +28,4 @@ const Body = () => {
     );
 };
 
-export default Body;
+export default memo(Body);

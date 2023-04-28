@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { Box, BaseHeaderLayout } from '@strapi/design-system';
 
 const Header = () => {
@@ -6,4 +6,4 @@ const Header = () => {
         <BaseHeaderLayout title="QBWA" subtitle={`Quickly Build Web Apps`} as="h2" />
     </Box>
 };
-export default Header;
+export default memo(Header);
