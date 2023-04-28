@@ -3,7 +3,7 @@ export default {
         const msgA = msg || '';
         const indentMsgA = indentMsg || [];
         console.log(">> 🗑", msg);
-        console.group();
+        console.group("details:");
         indentMsgA.forEach(msg => {console.log(msg)});
         console.groupEnd();
     }
