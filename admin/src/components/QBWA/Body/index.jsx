@@ -23,10 +23,10 @@ const Body = () => {
     return (
         <div>
             {/* <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} />  */}
-            <select className="form-control" onChange={handleChange}>
+            <select onChange={handleChange}>
             {selectOptions.map((option) => {
                     console.log(`Making option for: ${JSON.stringify(option)}`);
-                    return (<option value={option.value}>
+                    return (<option>
                         {option.label}
                     </option>);
                 })}
