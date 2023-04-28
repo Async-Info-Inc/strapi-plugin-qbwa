@@ -27,7 +27,7 @@ const Body = () => {
             {selectOptions.map((option) => {
                     console.log(`Making option for: ${JSON.stringify(option)}`);
                     return (<option>
-                        {option.label}
+                        {option}
                     </option>);
                 })}
             </select>
