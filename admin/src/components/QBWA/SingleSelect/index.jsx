@@ -1,6 +1,11 @@
 import React from "react";
 import Logger from "../../../../../qbwa/utils/Logger";
-const SingleSelect = ({ label = "label: ", options = [] }) => {
+const defaultChangeHandler = (value) => {
+    Logger.log("SingleSelect", [
+        `value change: ${value}`
+    ]);
+};
+const SingleSelect = ({ label = "label: ", options = [], onChange = defaultChangeHandler }) => {
     Logger.log("SingleSelect", [
         `label: ${label}`,
         `options: ${Logger.arrayToString(options)}`
@@ -8,10 +13,14 @@ const SingleSelect = ({ label = "label: ", options = [] }) => {
     const optionEls = options.map((option) => {
         return <option value={option}>{option}</option>;
     });
+    const onSelectChange = (event) => {
+        const value = event.target.value;
+        onChange(value);
+    };
     return (
         <div>
             <label>{label}</label>
-            <select>
+            <select onChange={onSelectChange}>
                 {optionEls}
             </select>
         </div>
