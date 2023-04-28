@@ -1,5 +1,5 @@
 import { Editor } from '@monaco-editor/react';
-import React, {useEffect, useState, useMemo} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 import SingleSelect from '../SingleSelect';
 
 const Body = () => {
