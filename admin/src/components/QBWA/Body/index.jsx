@@ -23,7 +23,7 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="File" options={fileOptions} /> 
+            <SingleSelect label="File" options={fileOptions} onChange={onChange} /> 
             <Editor height="90vh" defaultLanguage="css" defaultValue={editorModel}/>
         </div>
     );
