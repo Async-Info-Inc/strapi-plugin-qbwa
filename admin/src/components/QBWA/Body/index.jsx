@@ -22,10 +22,12 @@ const Body = () => {
     };
 
     useEffect(() => {
-        api.getFile(selectedFile).then((data) => {
-            console.log("Get File: ", data);
-            setEditorModel(data);
-        });
+        if(selectedFile !== null){
+            api.getFile(selectedFile).then((data) => {
+                console.log("Get File: ", data);
+                setEditorModel(data);
+            });
+        }
     }, [selectedFile]);
 
     useEffect(() => {
