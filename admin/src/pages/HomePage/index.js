@@ -8,9 +8,9 @@ import Footer from "../../components/QBWA/Footer";
 const HomePage = () => {
     return <Box>
         <Layout>
-            <Header />
+            {/* <Header /> */}
             <Body />
-            <Footer />
+            {/* <Footer /> */}
         </Layout>
     </Box>
 };
