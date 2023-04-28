@@ -3,7 +3,7 @@ const SingleSelect = ({ label, options, value, onChange }) => {
     const handleChange = (e) => {
         onChange(e.target.value);
     };
-    
+    console.log(`SingleSelect: ${label} ${options} ${value}`);
     return (
         <div className="form-group">
         <label>{label}</label>
