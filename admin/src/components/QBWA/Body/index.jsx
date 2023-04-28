@@ -1,6 +1,6 @@
 import { Editor } from '@monaco-editor/react';
 import React, {useEffect, useState, memo} from 'react';
-import SingleSelect from '../SingleSelect';
+// import SingleSelect from '../SingleSelect';
 
 const Body = () => {
     const [fileOptions, setFileOptions] = useState(['loading']);
@@ -22,7 +22,15 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} /> 
+            {/* <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} />  */}
+            <select className="form-control" onChange={handleChange}>
+            {selectOptions.map((option) => {
+                    console.log(`Making option for: ${JSON.stringify(option)}`);
+                    return (<option value={option.value}>
+                        {option.label}
+                    </option>);
+                })}
+            </select>
             <Editor height="90vh" defaultLanguage="css" defaultValue=""/>
         </div>
     );
