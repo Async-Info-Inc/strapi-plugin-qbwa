@@ -22,7 +22,7 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="File" options={selectOptions} value={fileOptions[0].value} onChange={(value) => console.log(value)} /> 
+            <SingleSelect label="File" options={selectOptions} value={selectOptions[0].value} onChange={(value) => console.log(value)} /> 
             <Editor height="90vh" defaultLanguage="css" defaultValue=""/>
         </div>
     );
