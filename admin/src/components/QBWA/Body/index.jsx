@@ -6,6 +6,13 @@ import api from '../../../../../qbwa/fe/css';
 
 const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
+    const [editorModel, setEditorModel] = useState("");
+    const onChange = (value) => {
+        api.getFile(value).then((data) => {
+            console.log("Get File: ", data);
+            setEditorModel(data.data);
+        });
+    };
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
@@ -17,7 +24,7 @@ const Body = () => {
     return (
         <div>
             <SingleSelect label="File" options={fileOptions} /> 
-            <Editor height="90vh" defaultLanguage="css" defaultValue=""/>
+            <Editor height="90vh" defaultLanguage="css" defaultValue={editorModel}/>
         </div>
     );
 };
