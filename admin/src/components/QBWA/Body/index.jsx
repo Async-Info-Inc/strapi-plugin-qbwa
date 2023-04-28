@@ -15,7 +15,7 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="File" options={selectOptions} /> 
+            <SingleSelect label="File" options={fileOptions} /> 
             <Editor height="90vh" defaultLanguage="css" defaultValue=""/>
         </div>
     );
