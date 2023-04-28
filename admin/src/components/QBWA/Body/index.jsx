@@ -21,6 +21,7 @@ const Body = () => {
         api.getAllFiles().then((data) => {
             console.log("Get All Files: ", data);
             setFileOptions(data);
+            onChange(data[0]);
         });
     }, []);
 
