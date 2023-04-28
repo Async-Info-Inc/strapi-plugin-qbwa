@@ -10,6 +10,7 @@ const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
     const [editorModel, setEditorModel] = useState("");
+    const [editorModelChange, setEditorModelChange] = useState("");
     const onChange = (value) => {
         console.log("On Change: ", value);
         setSelectedFile(value);
@@ -22,7 +23,11 @@ const Body = () => {
     };
 
     const onSaveClick = () => {
-        api.writeFile(selectedFile, editorModel);
+        api.writeFile(selectedFile, editorModelChange);
+    };
+
+    const onEditorChange = (value) => {
+        setEditorModelChange(value);
     };
 
     useEffect(() => {
