@@ -8,7 +8,7 @@ const SingleSelect = ({ label = "label: ", options, value, onChange }) => {
     return (
         <div className="form-group">
         <label>{label}</label>
-        <select className="form-control" value={value} onChange={handleChange}>
+        <select className="form-control" onChange={handleChange}>
             {options.map((option) => {
                 console.log(`Making option for: ${JSON.stringify(option)}`);
                 return <option key={option.value} value={option.value}>
