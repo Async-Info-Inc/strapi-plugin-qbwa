@@ -1,17 +1,6 @@
 import React, { memo } from "react";
 import { Box } from '@strapi/design-system/Box';
 import { Layout, BaseHeaderLayout, Button } from '@strapi/design-system';
-import {
-  SingleSelect,
-  SingleSelectOption,
-  /**
-   * These imports are still valid, but will be removed in the
-   * next major iteration
-   */
-  Select,
-  Option,
-  OptGroup,
-} from '@strapi/design-system';
 import Header from "../../components/QBWA/Header";
 import Body from "../../components/QBWA/Body";
 import Footer from "../../components/QBWA/Footer";
