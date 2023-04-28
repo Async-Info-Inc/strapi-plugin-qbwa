@@ -23,7 +23,9 @@ const Body = () => {
     };
 
     const onSaveClick = () => {
-        api.writeFile(selectedFile, editorModelChange);
+        if(editorModelChange !== null){
+            api.writeFile(selectedFile, editorModelChange);
+        }
     };
 
     const onEditorChange = (value) => {
@@ -63,7 +65,7 @@ const Body = () => {
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
             <Button variant="success" onClick={onSaveClick}>Save File</Button>
-            <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} />
+            <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} onChange={onEditorChange}/>
         </div>
     );
 };
