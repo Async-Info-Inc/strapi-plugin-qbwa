@@ -27,11 +27,18 @@ const Body = () => {
                 console.log("Get File: ", data);
                 setEditorModel(data);
             });
+        }else{
+            setEditorModel("");
         }
     }, [selectedFile]);
 
     useEffect(() => {
-        setSelectedFile(fileOptions[0]);
+        if(fileOptions.length > 0){
+            setSelectedFile(fileOptions[0]);
+        }else{
+            setSelectedFile(null);
+        }
+        
     }, [fileOptions]);
 
     useEffect(() => {
