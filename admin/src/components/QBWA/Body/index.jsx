@@ -8,6 +8,7 @@ const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
     const [editorModel, setEditorModel] = useState("");
     const onChange = (value) => {
+        console.log("On Change: ", value);
         api.getFile(value).then((data) => {
             console.log("Get File: ", data);
             setEditorModel(data.data);
