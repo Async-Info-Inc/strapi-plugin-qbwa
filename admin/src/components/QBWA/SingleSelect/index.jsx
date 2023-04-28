@@ -11,9 +11,9 @@ const SingleSelect = ({ label = "label: ", options, value, onChange }) => {
         <select className="form-control" onChange={handleChange}>
             {options.map((option) => {
                 console.log(`Making option for: ${JSON.stringify(option)}`);
-                return <option key={option.value} value={option.value}>
+                return (<option value={option.value}>
                     {option.label}
-                </option>;
+                </option>);
             })}
         </select>
         </div>
