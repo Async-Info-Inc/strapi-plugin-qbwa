@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import SingleSelect from '../SingleSelect';
 
 const Body = () => {
-    const [fileOptions, setFileOptions] = useState([{label: 'Loading...', value: 1}]);
+    const [fileOptions, setFileOptions] = useState(['loading']);
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
