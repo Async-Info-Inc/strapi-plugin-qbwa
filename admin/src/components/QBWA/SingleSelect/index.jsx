@@ -4,7 +4,7 @@ const SingleSelect = ({ label = "label: ", options = [{label: 'option 1', value:
         console.log(`SingleSelect: handleChange: ${e.target.value}`);
         onChange(e.target.value);
     };
-    console.log(`SingleSelect: ${label} ${options} ${value}`);
+    console.log(`SingleSelect: ${label} ${JSON.stringify(options)} ${value}`);
     return (
         <div className="form-group">
         <label>{label}</label>
