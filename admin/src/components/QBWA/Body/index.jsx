@@ -16,9 +16,9 @@ const Body = () => {
     };
 
     const onRemoveClick = () => {
-        api.deleteFile(selectedFile);
-        setFileOptions(fileOptions => fileOptions.filter(file => file !== selectedFile));
-        onChange(fileOptions[0]);
+        api.deleteFile(selectedFile).then(resp => {
+            setFileOptions(fileOptions => (fileOptions.filter(file => file !== selectedFile)));
+        });
     };
 
     useEffect(() => {
@@ -29,6 +29,10 @@ const Body = () => {
             });
         }
     }, [selectedFile]);
+
+    useEffect(() => {
+        setSelectedFile(fileOptions[0]);
+    }, [fileOptions]);
 
     useEffect(() => {
         api.getAllFiles().then((data) => {
