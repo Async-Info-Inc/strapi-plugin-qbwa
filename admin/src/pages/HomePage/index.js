@@ -4,14 +4,12 @@ import { Layout, BaseHeaderLayout, Button } from '@strapi/design-system';
 import Header from "../../components/QBWA/Header";
 import Body from "../../components/QBWA/Body";
 import Footer from "../../components/QBWA/Footer";
+import SingleSelect from "../../components/QBWA/SingleSelect";
 
 const HomePage = () => {
     return <Box>
         <Layout>
-            <select>
-                <option>1</option>
-                <option>2</option>
-            </select>
+            <SingleSelect />
             {/* <Header />
             <Body />
             <Footer /> */}

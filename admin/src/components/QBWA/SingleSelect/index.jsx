@@ -1,21 +1,16 @@
-import React, {memo} from "react";
-const SingleSelect = ({ label = "label: ", options, value, onChange }) => {
-    const handleChange = (e) => {
-        console.log(`SingleSelect: handleChange: ${e.target.value}`);
-        onChange(e.target.value);
-    };
-    console.log(`SingleSelect: ${label} ${JSON.stringify(options)} ${value}`);
+import React from "react";
+import Logger from "../../../../../qbwa/utils/Logger";
+const SingleSelect = ({ label = "label: " }) => {
+    Logger.log("SingleSelect", [
+        `label: ${label}`
+    ]);
     return (
-        <div className="form-group">
-        <label>{label}</label>
-        <select className="form-control" onChange={handleChange}>
-            {options.map((option) => {
-                console.log(`Making option for: ${JSON.stringify(option)}`);
-                return (<option value={option.value}>
-                    {option.label}
-                </option>);
-            })}
-        </select>
+        <div>
+            <label>{label}</label>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
         </div>
     );
 };
