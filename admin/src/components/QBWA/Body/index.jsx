@@ -1,6 +1,6 @@
 import { Editor } from '@monaco-editor/react';
 import { Box } from '@strapi/design-system/Box';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
