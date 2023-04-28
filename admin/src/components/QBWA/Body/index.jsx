@@ -21,6 +21,10 @@ const Body = () => {
         });
     };
 
+    const onSaveClick = () => {
+        api.writeFile(selectedFile, editorModel);
+    };
+
     useEffect(() => {
         if(selectedFile !== null){
             api.getFile(selectedFile).then((data) => {
@@ -53,6 +57,7 @@ const Body = () => {
         <div>
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
+            <Button variant="success" onClick={onSaveClick}>Save File</Button>
             <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} />
         </div>
     );
