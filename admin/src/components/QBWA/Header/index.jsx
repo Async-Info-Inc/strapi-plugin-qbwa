@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseHeaderLayout } from '@strapi/design-system';
+import { Box, BaseHeaderLayout } from '@strapi/design-system';
 
 const Header = () => {
     <Box background="neutral100">

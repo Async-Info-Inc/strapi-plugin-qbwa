@@ -1,3 +1,4 @@
+import React from "react";
 const SingleSelect = ({ label, options, value, onChange }) => {
     const handleChange = (e) => {
         onChange(e.target.value);
@@ -16,3 +17,5 @@ const SingleSelect = ({ label, options, value, onChange }) => {
         </div>
     );
 };
+
+export default SingleSelect;
