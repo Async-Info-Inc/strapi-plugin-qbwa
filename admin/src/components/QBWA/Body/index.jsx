@@ -74,7 +74,7 @@ const Body = () => {
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
             <Button variant="success" onClick={onSaveClick}>Save File</Button>
-            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={content.length > 5 ? 'Content is too long' : undefined} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
+            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileName.indexOf('.css') > -1 ? 'You have added .css in the name. This is not needed since the extension will be auto added.' : undefined} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
             <Button variant="success" onClick={onCreateClick}>Create File</Button>
             <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} onChange={onEditorChange}/>
         </div>
