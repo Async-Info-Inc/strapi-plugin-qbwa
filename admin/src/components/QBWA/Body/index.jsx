@@ -4,13 +4,16 @@ import {Button} from '@strapi/design-system';
 import SingleSelect from '../SingleSelect';
 import api from '../../../../../qbwa/fe/css';
 import Trash from '@strapi/icons/Trash';
-// import SingleSelect from '../SingleSelect';
+import { TextInput } from '@strapi/design-system';
 
 const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
     const [editorModel, setEditorModel] = useState("");
     const [editorModelChange, setEditorModelChange] = useState("");
+    
+    const [newFileName, setNewFileName] = useState('');
+
     const onChange = (value) => {
         console.log("On Change: ", value);
         setSelectedFile(value);
@@ -30,6 +33,12 @@ const Body = () => {
 
     const onEditorChange = (value) => {
         setEditorModelChange(value);
+    };
+
+    const onCreateClick = () => {
+        if(newFileName !== ''){
+            api.createFile(newFileName);
+        }
     };
 
     useEffect(() => {
@@ -65,6 +74,8 @@ const Body = () => {
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
             <Button variant="success" onClick={onSaveClick}>Save File</Button>
+            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={content.length > 5 ? 'Content is too long' : undefined} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
+            <Button variant="success" onClick={onCreateClick}>Create File</Button>
             <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} onChange={onEditorChange}/>
         </div>
     );
