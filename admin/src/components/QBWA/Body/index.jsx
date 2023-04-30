@@ -115,11 +115,23 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} value={selectedFile}/> 
-            <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
-            <Button variant="success" onClick={onSaveClick}>Save File</Button>
-            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileNameError} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
-            <Button variant="success" onClick={onCreateClick}>Create File</Button>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                rowGap: '10px',
+            }}>
+                <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileNameError} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
+                <Button variant="success" onClick={onCreateClick}>Create File</Button>
+            </div>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                rowGap: '10px',
+            }}>
+                <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} value={selectedFile}/> 
+                <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
+                <Button variant="success" onClick={onSaveClick}>Save File</Button>
+            </div>
             <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} onChange={onEditorChange}/>
         </div>
     );
