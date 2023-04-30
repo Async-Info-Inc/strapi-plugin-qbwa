@@ -1,6 +1,6 @@
 {
   "name": "@asyncinfo/strapi-plugin-qbwa",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "QBWA - Quickly Build Web Apps by Async Info Inc.",
   "private": false,
   "keywords": [
