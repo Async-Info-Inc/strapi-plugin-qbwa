@@ -69,7 +69,7 @@ const Body = () => {
 
     const onCreateClick = () => {
         if(newFileName !== ''){
-            api.createFile(newFileName);
+            api.writeFile(newFileName, '// Created with QBWA');
         }else{
             setNewFileNameError(errorMsgs.EmptyError);
         }
