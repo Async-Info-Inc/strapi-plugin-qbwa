@@ -5,6 +5,7 @@ import SingleSelect from '../SingleSelect';
 import api from '../../../../../qbwa/fe/css';
 import Trash from '@strapi/icons/Trash';
 import { TextInput } from '@strapi/design-system';
+import Logger from '../../../../../qbwa/utils/Logger';
 
 const Body = () => {
     const [fileOptions, setFileOptions] = useState([]);
@@ -14,41 +15,39 @@ const Body = () => {
     
     const [newFileName, setNewFileName] = useState('');
     const [newFileNameError, setNewFileNameError] = useState(undefined);
+    const errorMsgs = {
+        ExtensionError: 'You have added .css in the name. This is not needed since the extension will be auto added.',
+        IndexError: 'You have added index in the name. This is not needed since the extension will be auto added.',
+        EmptyError: 'You have not added a name. Please add a name.',
+        AlreadyExists: 'This file already exists. Please choose a different name.'
+    };
 
-    useEffect(() => {        
-        const errorMsgs = {
-            ExtensionError: 'You have added .css in the name. This is not needed since the extension will be auto added.',
-            IndexError: 'You have added index in the name. This is not needed since the extension will be auto added.',
-            EmptyError: 'You have not added a name. Please add a name.',
-            AlreadyExists: 'This file already exists. Please choose a different name.'
-        };
+    useEffect(() => {    
         if(newFileName !== ''){
-
-        }
-        if(newFileName.indexOf('.css') !== -1){
-            setNewFileNameError(errorMsgs.ExtensionError);
-        }
-
-        if(newFileName === 'index'){
-            setNewFileNameError(errorMsgs.IndexError);
-        }
-
-        if(newFileName === ''){
-            setNewFileNameError(errorMsgs.EmptyError);
-        }
-        
-        if(fileOptions.indexOf(newFileName) > -1){
-            setNewFileNameError(errorMsgs.AlreadyExists);
-        }
-
+            Logger.log('validating new file name', [
+                `New File Name: ${newFileName}`
+            ]);
+            if(newFileName.indexOf('.css') !== -1){
+                setNewFileNameError(errorMsgs.ExtensionError);
+            }
+    
+            if(newFileName === 'index'){
+                setNewFileNameError(errorMsgs.IndexError);
+            }
+            
+            if(fileOptions.indexOf(newFileName) > -1){
+                setNewFileNameError(errorMsgs.AlreadyExists);
+            }
+        }    
     }, [newFileName]);
 
     const onChange = (value) => {
-        console.log("On Change: ", value);
+        Logger.log("OnFileChanged", [`file selected: ${value}`]);
         setSelectedFile(value);
     };
 
     const onRemoveClick = () => {
+        Logger.log("OnRemoveClick", [`file to be removed: ${selectedFile}`]);
         api.deleteFile(selectedFile).then(resp => {
             setFileOptions(fileOptions => (fileOptions.filter(file => file !== selectedFile)));
         });
@@ -56,6 +55,10 @@ const Body = () => {
 
     const onSaveClick = () => {
         if(editorModelChange !== null){
+            Logger.log("OnSaveClick", [
+                `File to be updated: ${selectedFile}`,
+                `New content: ${editorModelChange}`
+            ]);
             api.writeFile(selectedFile, editorModelChange);
         }
     };
@@ -68,7 +71,7 @@ const Body = () => {
         if(newFileName !== ''){
             api.createFile(newFileName);
         }else{
-
+            setNewFileNameError(errorMsgs.EmptyError);
         }
     };
 
