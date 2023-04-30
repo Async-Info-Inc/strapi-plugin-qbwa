@@ -41,6 +41,14 @@ const Body = () => {
         }    
     }, [newFileName]);
 
+    const loadFileOptions = () => {
+        api.getAllFiles().then((data) => {
+            console.log("Get All Files: ", data);
+            setFileOptions(data);
+            onChange(data[0]);
+        });
+    };
+
     const onChange = (value) => {
         Logger.log("OnFileChanged", [`file selected: ${value}`]);
         setSelectedFile(value);
@@ -69,12 +77,15 @@ const Body = () => {
 
     const onCreateClick = () => {
         if(newFileName !== ''){
-            api.writeFile(newFileName, '// Created with QBWA');
+            api.writeFile(newFileName, '// Created with QBWA').then(resp => {
+                loadFileOptions();
+            });
         }else{
             setNewFileNameError(errorMsgs.EmptyError);
         }
     };
 
+    // On selected file change, get the file from the server
     useEffect(() => {
         if(selectedFile !== null){
             api.getFile(selectedFile).then((data) => {
@@ -86,6 +97,7 @@ const Body = () => {
         }
     }, [selectedFile]);
 
+    // On file options change, set the selected file to the first file
     useEffect(() => {
         if(fileOptions.length > 0){
             setSelectedFile(fileOptions[0]);
@@ -95,12 +107,9 @@ const Body = () => {
         
     }, [fileOptions]);
 
+    // On load, get all files from the server
     useEffect(() => {
-        api.getAllFiles().then((data) => {
-            console.log("Get All Files: ", data);
-            setFileOptions(data);
-            onChange(data[0]);
-        });
+        loadFileOptions();
     }, []);
 
     return (
