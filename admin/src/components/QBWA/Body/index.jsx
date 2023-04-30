@@ -45,7 +45,7 @@ const Body = () => {
         api.getAllFiles().then((data) => {
             console.log("Get All Files: ", data);
             setFileOptions(data);
-            onChange(data[0]);
+            onChange(selectedFile);
         });
     };
 
@@ -78,6 +78,7 @@ const Body = () => {
     const onCreateClick = () => {
         if(newFileName !== ''){
             api.writeFile(newFileName, '// Created with QBWA').then(resp => {
+                setSelectedFile(newFileName);
                 loadFileOptions();
             });
         }else{
