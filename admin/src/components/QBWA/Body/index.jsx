@@ -13,6 +13,35 @@ const Body = () => {
     const [editorModelChange, setEditorModelChange] = useState("");
     
     const [newFileName, setNewFileName] = useState('');
+    const [newFileNameError, setNewFileNameError] = useState(undefined);
+
+    useEffect(() => {        
+        const errorMsgs = {
+            ExtensionError: 'You have added .css in the name. This is not needed since the extension will be auto added.',
+            IndexError: 'You have added index in the name. This is not needed since the extension will be auto added.',
+            EmptyError: 'You have not added a name. Please add a name.',
+            AlreadyExists: 'This file already exists. Please choose a different name.'
+        };
+        if(newFileName !== ''){
+
+        }
+        if(newFileName.indexOf('.css') !== -1){
+            setNewFileNameError(errorMsgs.ExtensionError);
+        }
+
+        if(newFileName === 'index'){
+            setNewFileNameError(errorMsgs.IndexError);
+        }
+
+        if(newFileName === ''){
+            setNewFileNameError(errorMsgs.EmptyError);
+        }
+        
+        if(fileOptions.indexOf(newFileName) > -1){
+            setNewFileNameError(errorMsgs.AlreadyExists);
+        }
+
+    }, [newFileName]);
 
     const onChange = (value) => {
         console.log("On Change: ", value);
@@ -38,6 +67,8 @@ const Body = () => {
     const onCreateClick = () => {
         if(newFileName !== ''){
             api.createFile(newFileName);
+        }else{
+
         }
     };
 
@@ -74,7 +105,7 @@ const Body = () => {
             <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
             <Button variant="success" onClick={onSaveClick}>Save File</Button>
-            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileName.indexOf('.css') > -1 ? 'You have added .css in the name. This is not needed since the extension will be auto added.' : undefined} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
+            <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileNameError} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
             <Button variant="success" onClick={onCreateClick}>Create File</Button>
             <Editor height="90vh" defaultLanguage="css" defaultValue="" value={editorModel} onChange={onEditorChange}/>
         </div>
