@@ -115,7 +115,7 @@ const Body = () => {
 
     return (
         <div>
-            <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} /> 
+            <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} value={selectedFile}/> 
             <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
             <Button variant="success" onClick={onSaveClick}>Save File</Button>
             <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileNameError} onChange={e => setNewFileName(e.target.value)} value={newFileName} />

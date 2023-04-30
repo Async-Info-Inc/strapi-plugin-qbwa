@@ -1,6 +1,6 @@
 import React from "react";
 import Logger from "../../../../../qbwa/utils/Logger";
-const SingleSelect = ({ label = "label: ", options = [], onChange }) => {
+const SingleSelect = ({ label = "label: ", options = [], value, onChange }) => {
     Logger.log("SingleSelect", [
         `label: ${label}`,
         `options: ${Logger.arrayToString(options)}`
@@ -20,7 +20,7 @@ const SingleSelect = ({ label = "label: ", options = [], onChange }) => {
     return (
         <div>
             <label>{label}</label>
-            <select onChange={onSelectChange}>
+            <select onChange={onSelectChange} value={value}>
                 {optionEls}
             </select>
         </div>
