@@ -118,7 +118,8 @@ const Body = () => {
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
-                rowGap: '10px',
+                columnGap: '10px',
+                alignItems: 'center'
             }}>
                 <TextInput placeholder="new file name" label="new CSS file" name="content" hint="Create a new CSS StyleSheet" error={newFileNameError} onChange={e => setNewFileName(e.target.value)} value={newFileName} />
                 <Button variant="success" onClick={onCreateClick}>Create File</Button>
@@ -126,7 +127,8 @@ const Body = () => {
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
-                rowGap: '10px',
+                columnGap: '10px',
+                alignItems: 'center'
             }}>
                 <SingleSelect label="CSS File" options={fileOptions} onChange={onChange} value={selectedFile}/> 
                 <Button variant="danger" startIcon={Trash} onClick={onRemoveClick}>Remove File</Button>
