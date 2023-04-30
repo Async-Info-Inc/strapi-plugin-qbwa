@@ -77,7 +77,7 @@ const Body = () => {
 
     const onCreateClick = () => {
         if(newFileName !== ''){
-            api.writeFile(newFileName, '// Created with QBWA').then(resp => {
+            api.writeFile(newFileName, '/* Created with QBWA */').then(resp => {
                 setSelectedFile(newFileName);
                 loadFileOptions();
             });
